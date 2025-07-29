@@ -1,0 +1,41 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+override.tf
+override.tf.json
+*.tfvars
+*.tfvars.json
+
+# Sensitive files
+.env
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# GitHub Actions artifacts (if any local test runners are used)
+.github/workflows/*.bak
+.github/workflows/*.tmp
+
+# Python virtual env (if any scripting done)
+venv/
+__pycache__/
+
+# Node (if any frontend or scripting involved)
+node_modules/
+
+# Terraform Plan files
+*.plan
