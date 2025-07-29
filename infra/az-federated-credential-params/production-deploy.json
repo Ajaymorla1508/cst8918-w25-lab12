@@ -1,0 +1,12 @@
+{
+  "//": "TODO: Add federated credential configuration for this scenario"
+}
+{
+  "name": "production-deploy-credential",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "subject": "repo:<GITHUB-OWNER>/<REPO-NAME>:environment:production",
+  "description": "Federated credential for GitHub environment 'production'",
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ]
+}

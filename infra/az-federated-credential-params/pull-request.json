@@ -1,0 +1,12 @@
+{
+  "//": "TODO: Add federated credential configuration for this scenario"
+}
+{
+  "name": "pull-request-federated-credential",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "subject": "repo:<GITHUB-OWNER>/<REPO-NAME>:pull_request",
+  "description": "Federated credential for pull request CI checks",
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ]
+}

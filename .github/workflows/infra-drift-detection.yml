@@ -1,0 +1,31 @@
+# TODO: Define GitHub Actions workflow for <name>
+name: Terraform Drift Detection
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'  # Every Sunday at 3 AM UTC
+  workflow_dispatch:
+
+jobs:
+  drift-detection:
+    name: Detect Infrastructure Drift
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Terraform Init
+      run: terraform init
+      working-directory: infra/tf-app
+
+    - name: Terraform Refresh
+      run: terraform refresh
+      working-directory: infra/tf-app
+
+    - name: Terraform Plan (check drift)
+      run: terraform plan -detailed-exitcode
+      working-directory: infra/tf-app
